@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ملفي الطبي - مستشفى الشفاء</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+  <header>
+    <div class="container">
+      <div class="logo">
+        <i class="fa-solid fa-hospital"></i>
+        <h1>بوابة المريض</h1>
+      </div>
+      <div class="header-actions">
+        <span id="patient-name">أهلاً أحمد</span>
+        <a href="index.html" class="btn-primary" style="padding:8px 15px">تسجيل خروج</a>
+      </div>
+    </div>
+  </header>
+
+  <section class="patient-dashboard">
+    <div class="container">
+      <div class="tabs">
+        <button class="tab-btn active" data-tab="appointments">مواعيدي</button>
+        <button class="tab-btn" data-tab="results">نتائج التحاليل</button>
+        <button class="tab-btn" data-tab="prescriptions">الروشتات</button>
+      </div>
+
+      <div class="tab-content active" id="appointments">
+        <h3>المواعيد القادمة</h3>
+        <div class="appointment-card">
+          <p><strong>د. أحمد سعيد</strong> - قسم القلب</p>
+          <p><i class="fa-solid fa-calendar"></i> 15 مايو 2026 - 10:30 ص</p>
+          <span class="status confirmed">مؤكد</span>
+        </div>
+      </div>
+
+      <div class="tab-content" id="results">
+        <h3>نتائج التحاليل</h3>
+        <table>
+          <tr><th>التحليل</th><th>النتيجة</th><th>التاريخ</th><th>تحميل</th></tr>
+          <tr>
+            <td>صورة دم كاملة CBC</td>
+            <td>طبيعي</td>
+            <td>01/05/2026</td>
+            <td><a href="#" class="download-btn"><i class="fa-solid fa-download"></i> PDF</a></td>
+          </tr>
+          <tr>
+            <td>وظائف كلى</td>
+            <td>طبيعي</td>
+            <td>28/04/2026</td>
+            <td><a href="#" class="download-btn"><i class="fa-solid fa-download"></i> PDF</a></td>
+          </tr>
+        </table>
+      </div>
+
+      <div class="tab-content" id="prescriptions">
+        <h3>الروشتات الطبية</h3>
+        <div class="prescription-card">
+          <p><strong>د. منى فاروق</strong> - 01/05/2026</p>
+          <ul>
+            <li>Panadol - قرص كل 8 ساعات</li>
+            <li>Vitamin D - قرص يومياً</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    // Tabs Logic
+    document.querySelectorAll('.tab-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+        document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+        btn.classList.add('active');
+        document.getElementById(btn.dataset.tab).classList.add('active');
+      });
+    });
+  </script>
+</body>
+</html>

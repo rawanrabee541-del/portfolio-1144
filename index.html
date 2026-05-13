@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>مستشفى الشفاء التخصصي - Basandilah</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="container">
+      <div class="logo">
+        <i class="fa-solid fa-hospital"></i>
+        <h1>مستشفى الشفاء</h1>
+      </div>
+      <nav id="navbar">
+        <a href="#home" class="active">الرئيسية</a>
+        <a href="#departments">الأقسام</a>
+        <a href="#doctors">الأطباء</a>
+        <a href="#appointment">احجز موعد</a>
+        <a href="login.html">بوابة المريض</a>
+        <a href="#contact">تواصل</a>
+      </nav>
+      <div class="header-actions">
+        <button id="theme-toggle"><i class="fa-solid fa-moon"></i></button>
+        <a href="tel:123" class="emergency-btn"><i class="fa-solid fa-phone"></i> طوارئ</a>
+        <i class="fa-solid fa-bars" id="menu-btn"></i>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="home" class="hero">
+    <div class="container">
+      <div class="hero-text">
+        <h2>رعايتك الصحية <span>أولويتنا</span></h2>
+        <p>نقدم أفضل الخدمات الطبية بأحدث التقنيات وأمهر الأطباء على مدار 24 ساعة</p>
+        <a href="#appointment" class="btn-primary">احجز موعد الآن</a>
+      </div>
+      <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?q=80&w=1470&auto=format&fit=crop" alt="دكتورة">
+    </div>
+  </section>
+
+  <!-- Departments -->
+  <section id="departments" class="departments">
+    <div class="container">
+      <h2 class="section-title">أقسامنا الطبية</h2>
+      <div class="grid">
+        <div class="card">
+          <img src="https://images.unsplash.com/photo-1530026405186-ed1f139313f8?q=80&w=1287&auto=format&fit=crop" alt="قسم القلب">
+          <i class="fa-solid fa-heart-pulse"></i>
+          <h3>القلب</h3>
+          <p>قسطرة وجراحات قلب بأحدث الأجهزة</p>
+        </div>
+        <div class="card">
+          <img src="https://images.unsplash.com/photo-1559757175-0eb30cd8c063?q=80&w=1631&auto=format&fit=crop" alt="المخ والاعصاب">
+          <i class="fa-solid fa-brain"></i>
+          <h3>المخ والأعصاب</h3>
+          <p>تشخيص وعلاج السكتات الدماغية</p>
+        </div>
+        <div class="card">
+          <img src="https://images.unsplash.com/photo-1631217868264-e5b90bb7e133?q=80&w=1491&auto=format&fit=crop" alt="قسم الأطفال">
+          <i class="fa-solid fa-baby"></i>
+          <h3>الأطفال</h3>
+          <p>رعاية متكاملة لطفلك من الولادة</p>
+        </div>
+        <div class="card">
+          <img src="https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2?q=80&w=1470&auto=format&fit=crop" alt="قسم العظام">
+          <i class="fa-solid fa-bone"></i>
+          <h3>العظام</h3>
+          <p>مناظير وتبديل مفاصل</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Doctors with Rating -->
+  <section id="doctors" class="doctors">
+    <div class="container">
+      <h2 class="section-title">نخبة الأطباء</h2>
+      <div class="filter-btns">
+        <button class="filter-btn active" data-filter="all">الكل</button>
+        <button class="filter-btn" data-filter="قلب">قلب</button>
+        <button class="filter-btn" data-filter="عظام">عظام</button>
+        <button class="filter-btn" data-filter="أطفال">أطفال</button>
+      </div>
+      <div class="grid" id="doctors-grid"></div>
+    </div>
+  </section>
+
+  <!-- Appointment Form -->
+  <section id="appointment" class="appointment">
+    <div class="container">
+      <h2 class="section-title">احجز موعدك</h2>
+      <form id="appointment-form" action="book.php" method="POST">
+        <div class="form-group">
+          <input type="text" name="name" placeholder="الاسم بالكامل" required>
+          <input type="tel" name="phone" placeholder="رقم الموبايل" required>
+        </div>
+        <div class="form-group">
+          <select name="department" required>
+            <option value="">اختر القسم</option>
+            <option>القلب</option>
+            <option>المخ والأعصاب</option>
+            <option>الأطفال</option>
+            <option>العظام</option>
+          </select>
+          <input type="date" name="date" required>
+        </div>
+        <textarea name="complaint" placeholder="اكتب شكوتك باختصار..."></textarea>
+        <button type="submit" class="btn-primary">تأكيد الحجز</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Google Maps -->
+  <section class="map">
+    <div class="container">
+      <h2 class="section-title">موقعنا</h2>
+      <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d54695.2666435466!2d31.4!3d31.0!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14f79d1b9e4c4e7d%3A0x0!2z2KjYp9mE2LPZitin2LHYp9iqINin2YTYpdiz2YrYp9mG!5e0!3m2!1sar!2seg!4v1699999999999" 
+        width="100%" height="450" style="border:0; border-radius: 10px;" allowfullscreen="" loading="lazy">
+      </iframe>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer id="contact">
+    <div class="container">
+      <div>
+        <h3>مستشفى الشفاء</h3>
+        <p>Basandilah, Dakahlia, Egypt</p>
+        <p>طوارئ: 123 | حجز: 16000</p>
+      </div>
+      <div>
+        <h3>روابط سريعة</h3>
+        <a href="#departments">الأقسام</a>
+        <a href="#doctors">الأطباء</a>
+        <a href="login.html">بوابة المريض</a>
+      </div>
+      <div>
+        <h3>الاعتمادات</h3>
+        <img src="https://images.unsplash.com/photo-1586773860418-d37222d8fce3?q=80&w=1473&auto=format&fit=crop" alt="JCI" style="width:100px; border-radius:5px;">
+      </div>
+    <p class="copyright">© 2026 مستشفى الشفاء. جميع الحقوق محفوظة</p>
+  </footer>
+
+  <!-- Chatbot -->
+  <div id="chatbot">
+    <div id="chatbot-icon"><i class="fa-solid fa-robot"></i></div>
+    <div id="chatbot-window">
+      <div class="chatbot-header">
+        <h4>مساعد الشفاء الذكي</h4>
+        <i class="fa-solid fa-xmark" id="close-chat"></i>
+      </div>
+      <div class="chatbot-messages" id="chat-messages">
+        <div class="bot-msg">أهلاً بيك! أنا مساعد مستشفى الشفاء. أقدر أساعدك في المواعيد أو الطوارئ. اسألني أي حاجة 😊</div>
+      </div>
+      <div class="chatbot-input">
+        <input type="text" id="user-input" placeholder="اكتب سؤالك...">
+        <button id="send-msg"><i class="fa-solid fa-paper-plane"></i></button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>بوابة المريض - مستشفى الشفاء</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="login-container">
+    <div class="login-box">
+      <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=1470&auto=format&fit=crop" alt="login">
+      <h2>بوابة المريض</h2>
+      <form id="login-form" action="login.php" method="POST">
+        <input type="text" name="patient_id" placeholder="رقم الملف الطبي" required>
+        <input type="password" name="password" placeholder="كلمة المرور" required>
+        <button type="submit" class="btn-primary">دخول</button>
+        <a href="#">نسيت كلمة المرور؟</a>
+      </form>
+      <a href="index.html" class="back-home">العودة للرئيسية</a>
+    </div>
+  </div>
+</body>
+</html>
